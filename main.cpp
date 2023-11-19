@@ -26,7 +26,6 @@ int main() {
             // 入队操作
             std::string name, ID, doctor;
             int roomNumber;
-            int priority;
 
             std::cout << "请输入患者姓名: ";
             std::cin >> name;
@@ -36,8 +35,6 @@ int main() {
             std::cin >> roomNumber;
             std::cout << "请输入医生姓名: ";
             std::cin >> doctor;
-            std::cout << "请输入患者优先级: ";
-            std::cin >> priority;
 
             Patient newPatient(name, ID, roomNumber, doctor);
             push(patients, newPatient);
