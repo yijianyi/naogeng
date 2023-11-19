@@ -46,6 +46,9 @@ int main() {
         case 2: {
             // 出队操作
             if (emptyQueue(patients)) {
+                std::cout << "队列已空，无法出队！" << std::endl;
+            }
+            else {
                 Patient poppedPatient;
                 pop(patients, &poppedPatient);
                 std::cout << "出队患者信息：" << std::endl;
@@ -53,24 +56,22 @@ int main() {
                 std::cout << "ID：" << poppedPatient.ID << std::endl;
                 std::cout << "科室：" << poppedPatient.roomNumber << std::endl;
                 std::cout << "医生：" << poppedPatient.doctor << std::endl;
-            }
-            else {
-                std::cout << "队列已空，无法出队！" << std::endl;
+                
             }
             break;
         }
         case 3: {
             // 查看队头患者信息
             if (emptyQueue(patients)) {
-                Patient headPatient = getHead(patients);
-                std::cout << "队头患者信息：" << std::endl;
-                std::cout << "姓名：" << headPatient.name << std::endl;
-                std::cout << "ID：" << headPatient.ID << std::endl;
-                std::cout << "科室：" << headPatient.roomNumber << std::endl;
-                std::cout << "医生：" << headPatient.doctor << std::endl;
+                std::cout << "队列为空！" << std::endl;
             }
             else {
-                std::cout << "队列为空！" << std::endl;
+                Patient *headPatient = getHead(patients);
+                std::cout << "队头患者信息：" << std::endl;
+                std::cout << "姓名：" << headPatient->name << std::endl;
+                std::cout << "ID：" << headPatient->ID << std::endl;
+                std::cout << "科室：" << headPatient->roomNumber << std::endl;
+                std::cout << "医生：" << headPatient->doctor << std::endl;
             }
             break;
         }

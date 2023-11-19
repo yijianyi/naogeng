@@ -23,7 +23,7 @@ void push(LinkedQueue& s, Patient x);
 void pop(LinkedQueue& s, Patient* e);
 
 //获取队头
-Patient getHead(LinkedQueue& s);
+Patient* getHead(LinkedQueue& s);
 
 //判断是否空队
 int emptyQueue(LinkedQueue& s);

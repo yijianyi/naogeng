@@ -29,18 +29,26 @@ void pop(LinkedQueue& s, Patient* e) {
         s.front = s.rear;
     }
     *e = p->patient;
+    if (p->next == NULL)
+    {
+        std::cout << "test" << std::endl;
+    }
+    else
+    {
+        std::cout << "sssss" << std::endl;
+    }
     s.front->next = p->next;
-    delete p;
+    //delete p;
 }
 
 //获取队头
-Patient getHead(LinkedQueue& s) {
+Patient* getHead(LinkedQueue& s) {
     if (emptyQueue(s))
     {
         std::cout << "队列为空" << std::endl;
-        return Patient();
+        return NULL;
     }
-    return s.front->next->patient;
+    return &(s.front->next->patient);
 }
 
 //判断是否空队
@@ -55,6 +63,10 @@ int emptyQueue(LinkedQueue& s) {
 //遍历输出病人信息
 void printQueue(LinkedQueue& scanf_s) {
     QueueNode* iter = scanf_s.front->next;
+    if (iter == NULL)
+    {
+        std::cout << "无排队患者" << std::endl;
+    }
     while (iter != NULL)
     {
         std::cout << "姓名：" << iter->patient.name << std::endl;
