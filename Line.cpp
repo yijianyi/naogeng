@@ -38,7 +38,7 @@ void pop(LinkedQueue& s, Patient* e) {
         std::cout << "sssss" << std::endl;
     }
     s.front->next = p->next;
-    //delete p;
+ 
 }
 
 //获取队头
