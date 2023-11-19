@@ -54,7 +54,7 @@ int emptyQueue(LinkedQueue& s) {
 
 //遍历输出病人信息
 void printQueue(LinkedQueue& scanf_s) {
-    QueueNode* iter = scanf_s.front;
+    QueueNode* iter = scanf_s.front->next;
     while (iter != NULL)
     {
         std::cout << "姓名：" << iter->patient.name << std::endl;
@@ -62,6 +62,7 @@ void printQueue(LinkedQueue& scanf_s) {
         std::cout << "科室：" << iter->patient.roomNumber << std::endl;
         std::cout << "医生：" << iter->patient.doctor << std::endl;
         std::cout << std::endl;
+        iter = iter->next;
     }
 }
 
